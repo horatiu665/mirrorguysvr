@@ -1,0 +1,649 @@
+fileFormatVersion: 2
+guid: 29723d0004732454f9b08029163b5880
+timeCreated: 1454788885
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Body
+    100004: HandsFeet
+    100006: Head
+    100008: Hip
+    100010: joint4
+    100012: joint8
+    100014: LeftArm
+    100016: LeftArm2
+    100018: LeftFoot
+    100020: LeftHand
+    100022: LeftLeg
+    100024: LeftLeg2
+    100026: Neck
+    100028: RightArm
+    100030: RightArm2
+    100032: RightFoot
+    100034: Righthand
+    100036: RightLeg
+    100038: RightLeg2
+    100040: Spine
+    100042: TennisBallReference
+    400000: //RootNode
+    400002: Body
+    400004: HandsFeet
+    400006: Head
+    400008: Hip
+    400010: joint4
+    400012: joint8
+    400014: LeftArm
+    400016: LeftArm2
+    400018: LeftFoot
+    400020: LeftHand
+    400022: LeftLeg
+    400024: LeftLeg2
+    400026: Neck
+    400028: RightArm
+    400030: RightArm2
+    400032: RightFoot
+    400034: Righthand
+    400036: RightLeg
+    400038: RightLeg2
+    400040: Spine
+    400042: TennisBallReference
+    2300000: TennisBallReference
+    3300000: TennisBallReference
+    4300000: TennisBallReference
+    4300002: Body
+    4300004: HandsFeet
+    7400000: Idle1
+    7400002: Idle2
+    7400004: Dance
+    7400006: Balance
+    9500000: //RootNode
+    13700000: Body
+    13700002: HandsFeet
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle1
+      takeName: Take 001
+      firstFrame: 11
+      lastFrame: 211
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 0
+      - path: HandsFeet
+        weight: 0
+      - path: Hip
+        weight: 1
+      - path: Hip/LeftLeg
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot/joint4
+        weight: 0
+      - path: Hip/RightLeg
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot/joint8
+        weight: 0
+      - path: Hip/Spine
+        weight: 1
+      - path: Hip/Spine/LeftArm
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2/LeftHand
+        weight: 1
+      - path: Hip/Spine/Neck
+        weight: 1
+      - path: Hip/Spine/Neck/Head
+        weight: 1
+      - path: Hip/Spine/Neck/Head/TennisBallReference
+        weight: 0
+      - path: Hip/Spine/RightArm
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2/Righthand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle2
+      takeName: Take 001
+      firstFrame: 11
+      lastFrame: 411
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 0
+      - path: HandsFeet
+        weight: 0
+      - path: Hip
+        weight: 1
+      - path: Hip/LeftLeg
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot/joint4
+        weight: 0
+      - path: Hip/RightLeg
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot/joint8
+        weight: 0
+      - path: Hip/Spine
+        weight: 1
+      - path: Hip/Spine/LeftArm
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2/LeftHand
+        weight: 1
+      - path: Hip/Spine/Neck
+        weight: 1
+      - path: Hip/Spine/Neck/Head
+        weight: 1
+      - path: Hip/Spine/Neck/Head/TennisBallReference
+        weight: 0
+      - path: Hip/Spine/RightArm
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2/Righthand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dance
+      takeName: Take 001
+      firstFrame: 412
+      lastFrame: 442
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 0
+      - path: HandsFeet
+        weight: 0
+      - path: Hip
+        weight: 1
+      - path: Hip/LeftLeg
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot/joint4
+        weight: 0
+      - path: Hip/RightLeg
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot/joint8
+        weight: 0
+      - path: Hip/Spine
+        weight: 1
+      - path: Hip/Spine/LeftArm
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2/LeftHand
+        weight: 1
+      - path: Hip/Spine/Neck
+        weight: 1
+      - path: Hip/Spine/Neck/Head
+        weight: 1
+      - path: Hip/Spine/Neck/Head/TennisBallReference
+        weight: 0
+      - path: Hip/Spine/RightArm
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2/Righthand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Balance
+      takeName: Take 001
+      firstFrame: 445
+      lastFrame: 488
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Body
+        weight: 0
+      - path: HandsFeet
+        weight: 0
+      - path: Hip
+        weight: 1
+      - path: Hip/LeftLeg
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot
+        weight: 1
+      - path: Hip/LeftLeg/LeftLeg2/LeftFoot/joint4
+        weight: 0
+      - path: Hip/RightLeg
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot
+        weight: 1
+      - path: Hip/RightLeg/RightLeg2/RightFoot/joint8
+        weight: 0
+      - path: Hip/Spine
+        weight: 1
+      - path: Hip/Spine/LeftArm
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2
+        weight: 1
+      - path: Hip/Spine/LeftArm/LeftArm2/LeftHand
+        weight: 1
+      - path: Hip/Spine/Neck
+        weight: 1
+      - path: Hip/Spine/Neck/Head
+        weight: 1
+      - path: Hip/Spine/Neck/Head/TennisBallReference
+        weight: 0
+      - path: Hip/Spine/RightArm
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2
+        weight: 1
+      - path: Hip/Spine/RightArm/RightArm2/Righthand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 13
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Hip
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftLeg2
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightLeg2
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftArm2
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightArm2
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Righthand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: bettercharacter(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Body
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HandsFeet
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hip
+      parentName: 
+      position: {x: 1.1549727e-17, y: 0.83603936, z: 0.003294499}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine
+      parentName: 
+      position: {x: -1.1549727e-17, y: 0.056455474, z: 0.0018757606}
+      rotation: {x: 0.48324576, y: -0.5162108, z: -0.48324576, w: 0.5162108}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftArm
+      parentName: 
+      position: {x: -0.20457834, y: 0.010022067, z: 0.14618155}
+      rotation: {x: -0.48324573, y: 0.5162108, z: 0.48324573, w: 0.5162108}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftArm2
+      parentName: 
+      position: {x: -0.24418713, y: 0, z: 0}
+      rotation: {x: 0, y: 0.008619729, z: -0, w: 0.99996287}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHand
+      parentName: 
+      position: {x: -0.16639999, y: -1.8440183e-16, z: 0.001595201}
+      rotation: {x: 0, y: -0.008619729, z: -0, w: 0.99996287}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightArm
+      parentName: 
+      position: {x: -0.2045787, y: 0.010022087, z: -0.14618109}
+      rotation: {x: 0.5162108, y: 0.48324573, z: -0.5162108, w: 0.48324573}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightArm2
+      parentName: 
+      position: {x: 0.24418809, y: -2.3092638e-16, z: -6.7879725e-17}
+      rotation: {x: 0, y: 0.008619729, z: -0, w: 0.99996287}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Righthand
+      parentName: 
+      position: {x: 0.16639999, y: -9.8411385e-17, z: -0.0016446167}
+      rotation: {x: 0, y: -0.008619729, z: -0, w: 0.99996287}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck
+      parentName: 
+      position: {x: -0.16848241, y: 0.005944676, z: -7.284125e-17}
+      rotation: {x: -0.48324573, y: 0.5162108, z: 0.48324573, w: 0.5162108}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: 
+      position: {x: -0, y: 0.38271603, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: TennisBallReference
+      parentName: 
+      position: {x: -3.5543522e-16, y: -0.00014616965, z: -0.0010039855}
+      rotation: {x: 1.1963953e-31, y: -2.351084e-16, z: 1.1236865e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftLeg
+      parentName: 
+      position: {x: -0.10050478, y: -0.090076156, z: 0.01698612}
+      rotation: {x: 0.4942542, y: 0.5056805, z: 0.4942542, w: 0.5056805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftLeg2
+      parentName: 
+      position: {x: -0.38368183, y: -1.317002e-16, z: 8.519448e-17}
+      rotation: {x: 0.9978768, y: 0.06512929, z: 3.988019e-18, w: 6.1102336e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftFoot
+      parentName: 
+      position: {x: -0.3064423, y: -5.0515146e-17, z: -5.862212e-17}
+      rotation: {x: 0.82830495, y: 0.5602775, z: 3.4307104e-17, w: 5.071905e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint4
+      parentName: 
+      position: {x: -0.116686255, y: 2.8865798e-17, z: 0.0000000016138505}
+      rotation: {x: -0.17111956, y: -0.686089, z: -0.17111956, w: 0.686089}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightLeg
+      parentName: 
+      position: {x: 0.100504816, y: -0.09007607, z: 0.016986148}
+      rotation: {x: 0.5056805, y: -0.4942542, z: 0.5056805, w: -0.4942542}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightLeg2
+      parentName: 
+      position: {x: 0.3836821, y: -0.0000000037133152, z: -2.3092638e-16}
+      rotation: {x: 0.9978768, y: 0.06512929, z: 3.9880375e-18, w: 6.110233e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightFoot
+      parentName: 
+      position: {x: 0.3064422, y: -0.000000051792824, z: -8.659739e-16}
+      rotation: {x: 0.82830495, y: 0.5602775, z: -1.7726695e-16, w: 1.9383082e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: joint8
+      parentName: 
+      position: {x: 0.116686225, y: -0.000000016605513, z: -0.0000000022823285}
+      rotation: {x: -0.17111956, y: -0.686089, z: -0.17111956, w: 0.686089}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

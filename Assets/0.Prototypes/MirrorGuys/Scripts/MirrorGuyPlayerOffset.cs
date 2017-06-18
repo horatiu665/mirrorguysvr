@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using UnityEngine;
+
+public class MirrorGuyPlayerOffset : MonoBehaviour
+{
+    public static MirrorGuyPlayerOffset instance;
+    void Awake()
+    {
+        instance = this;
+    }
+}
+
