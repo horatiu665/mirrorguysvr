@@ -38,6 +38,10 @@ public class MirrorGuyPunch : MonoBehaviour
                         {
                             // different person body part found.
                             bp.BeRagdolled(this);
+
+                            // deactivate trophy
+                            //var parentToDelete = FindParentClone(transform.parent);
+                            
                         }
                     }
                 }
@@ -45,6 +49,17 @@ public class MirrorGuyPunch : MonoBehaviour
             }
         }
     }
+
+   // private Transform FindParentClone(Transform tra)
+   // {
+    //    if (tra.name.Contains("Clone"))
+   //     {
+    //        return tra;
+    //    } else
+    //    {
+    //        return FindParentClone(tra.parent);
+    //    }
+    //}
 
     internal void Initialize(MirrorGuyLiveControl guy)
     {

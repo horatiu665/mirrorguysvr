@@ -14,18 +14,24 @@ using Valve.VR;
 public class SteamVR_RenderModel : MonoBehaviour
 {
 	public SteamVR_TrackedObject.EIndex index = SteamVR_TrackedObject.EIndex.None;
+
+	public const string modelOverrideWarning = "Model override is really only meant to be used in " +
+		"the scene view for lining things up; using it at runtime is discouraged.  Use tracked device " +
+		"index instead to ensure the correct model is displayed for all users.";
+
+	[Tooltip(modelOverrideWarning)]
 	public string modelOverride;
 
-	// Shader to apply to model.
+	[Tooltip("Shader to apply to model.")]
 	public Shader shader;
 
-	// Enable to print out when render models are loaded.
+	[Tooltip("Enable to print out when render models are loaded.")]
 	public bool verbose = false;
 
-	// If available, break down into separate components instead of loading as a single mesh.
+	[Tooltip("If available, break down into separate components instead of loading as a single mesh.")]
 	public bool createComponents = true;
 
-	// Update transforms of components at runtime to reflect user action.
+	[Tooltip("Update transforms of components at runtime to reflect user action.")]
 	public bool updateDynamically = true;
 
 	// Additional controller settings for showing scrollwheel, etc.
@@ -74,7 +80,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 					if (!SteamVR.active && !SteamVR.usingNativeSupport)
 					{
 						var error = EVRInitError.None;
-						OpenVR.Init(ref error, EVRApplicationType.VRApplication_Other);
+						OpenVR.Init(ref error, EVRApplicationType.VRApplication_Utility);
 						needsShutdown = true;
 					}
 
@@ -249,7 +255,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 
 				if (loading)
 				{
-					yield return new WaitForSeconds(0.1f);
+					yield return new WaitForSecondsRealtime(0.1f);
 				}
 				else
 				{
@@ -307,9 +313,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 		return false;
 	}
 
-    public Material overrideDefaultControllerMaterial;
-
-    RenderModel LoadRenderModel(CVRRenderModels renderModels, string renderModelName, string baseName)
+	RenderModel LoadRenderModel(CVRRenderModels renderModels, string renderModelName, string baseName)
 	{
         var pRenderModel = System.IntPtr.Zero;
 
@@ -320,7 +324,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 			if (error != EVRRenderModelError.Loading)
 				break;
 
-			System.Threading.Thread.Sleep(1);
+			Sleep();
 		}
 
 		if (error != EVRRenderModelError.None)
@@ -381,60 +385,59 @@ public class SteamVR_RenderModel : MonoBehaviour
 				if (error != EVRRenderModelError.Loading)
 					break;
 
-				System.Threading.Thread.Sleep(1);
+				Sleep();
 			}
 
-			if (error == EVRRenderModelError.None) {
-                if (overrideDefaultControllerMaterial != null) {
-                    material = overrideDefaultControllerMaterial;
-                } else {
-                    var diffuseTexture = MarshalRenderModel_TextureMap(pDiffuseTexture);
-                    var texture = new Texture2D(diffuseTexture.unWidth, diffuseTexture.unHeight, TextureFormat.ARGB32, false);
-                    if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Direct3D11)
-                    {
-                        texture.Apply();
+			if (error == EVRRenderModelError.None)
+			{
+				var diffuseTexture = MarshalRenderModel_TextureMap(pDiffuseTexture);
+				var texture = new Texture2D(diffuseTexture.unWidth, diffuseTexture.unHeight, TextureFormat.RGBA32, false);
+				if (SystemInfo.graphicsDeviceType == UnityEngine.Rendering.GraphicsDeviceType.Direct3D11)
+				{
+					texture.Apply();
 
-                        while (true)
-                        {
-                            error = renderModels.LoadIntoTextureD3D11_Async(renderModel.diffuseTextureId, texture.GetNativeTexturePtr());
-                            if (error != EVRRenderModelError.Loading)
-                                break;
+					while (true)
+					{
+						error = renderModels.LoadIntoTextureD3D11_Async(renderModel.diffuseTextureId, texture.GetNativeTexturePtr());
+						if (error != EVRRenderModelError.Loading)
+							break;
 
-                            System.Threading.Thread.Sleep(1);
-                        }
-                    }
-                    else
-                    {
-                        var textureMapData = new byte[diffuseTexture.unWidth * diffuseTexture.unHeight * 4]; // RGBA
-                        Marshal.Copy(diffuseTexture.rubTextureMapData, textureMapData, 0, textureMapData.Length);
+						Sleep();
+					}
+				}
+				else
+				{
+					var textureMapData = new byte[diffuseTexture.unWidth * diffuseTexture.unHeight * 4]; // RGBA
+					Marshal.Copy(diffuseTexture.rubTextureMapData, textureMapData, 0, textureMapData.Length);
 
-                        var colors = new Color32[diffuseTexture.unWidth * diffuseTexture.unHeight];
-                        int iColor = 0;
-                        for (int iHeight = 0; iHeight < diffuseTexture.unHeight; iHeight++)
-                        {
-                            for (int iWidth = 0; iWidth < diffuseTexture.unWidth; iWidth++)
-                            {
-                                var r = textureMapData[iColor++];
-                                var g = textureMapData[iColor++];
-                                var b = textureMapData[iColor++];
-                                var a = textureMapData[iColor++];
-                                colors[iHeight * diffuseTexture.unWidth + iWidth] = new Color32(r, g, b, a);
-                            }
-                        }
+					var colors = new Color32[diffuseTexture.unWidth * diffuseTexture.unHeight];
+					int iColor = 0;
+					for (int iHeight = 0; iHeight < diffuseTexture.unHeight; iHeight++)
+					{
+						for (int iWidth = 0; iWidth < diffuseTexture.unWidth; iWidth++)
+						{
+							var r = textureMapData[iColor++];
+							var g = textureMapData[iColor++];
+							var b = textureMapData[iColor++];
+							var a = textureMapData[iColor++];
+							colors[iHeight * diffuseTexture.unWidth + iWidth] = new Color32(r, g, b, a);
+						}
+					}
 
-                        texture.SetPixels32(colors);
-                        texture.Apply();
-                    }
+					texture.SetPixels32(colors);
+					texture.Apply();
+				}
 
-                    material = new Material(shader != null ? shader : Shader.Find("Standard"));
-                    material.mainTexture = texture;
-                    //material.hideFlags = HideFlags.DontUnloadUnusedAsset;
+				material = new Material(shader != null ? shader : Shader.Find("Standard"));
+				material.mainTexture = texture;
+				//material.hideFlags = HideFlags.DontUnloadUnusedAsset;
 
-                    materials[renderModel.diffuseTextureId] = material;
+				materials[renderModel.diffuseTextureId] = material;
 
-                    renderModels.FreeTexture(pDiffuseTexture);
-                }
-			} else {
+				renderModels.FreeTexture(pDiffuseTexture);
+			}
+			else
+			{
 				Debug.Log("Failed to load render model texture for render model " + renderModelName);
 			}
 		}
@@ -455,7 +458,8 @@ public class SteamVR_RenderModel : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1.0f);
 
-		using (var holder = new RenderModelInterfaceHolder()) {
+		using (var holder = new RenderModelInterfaceHolder())
+		{
 			var renderModels = holder.instance;
 			renderModels.FreeRenderModel(pRenderModel);
 		}
@@ -464,7 +468,8 @@ public class SteamVR_RenderModel : MonoBehaviour
 	public Transform FindComponent(string componentName)
 	{
 		var t = transform;
-		for (int i = 0; i < t.childCount; i++) {
+		for (int i = 0; i < t.childCount; i++)
+		{
 			var child = t.GetChild(i);
 			if (child.name == componentName)
 				return child;
@@ -574,7 +579,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 
 	SteamVR_Events.Action deviceConnectedAction, hideRenderModelsAction, modelSkinSettingsHaveChangedAction;
 
-	void Awake()
+	SteamVR_RenderModel()
 	{
 		deviceConnectedAction = SteamVR_Events.DeviceConnectedAction(OnDeviceConnected);
 		hideRenderModelsAction = SteamVR_Events.HideRenderModelsAction(OnHideRenderModels);
@@ -589,7 +594,7 @@ public class SteamVR_RenderModel : MonoBehaviour
 #endif
 		if (!string.IsNullOrEmpty(modelOverride))
 		{
-			Debug.Log("Model override is really only meant to be used in the scene view for lining things up; using it at runtime is discouraged.  Use tracked device index instead to ensure the correct model is displayed for all users.");
+			Debug.Log(modelOverrideWarning);
 			enabled = false;
 			return;
 		}
@@ -744,6 +749,13 @@ public class SteamVR_RenderModel : MonoBehaviour
 		{
 			UpdateModel();
 		}
+	}
+
+	private static void Sleep()
+	{
+#if !UNITY_METRO
+		System.Threading.Thread.Sleep(1);
+#endif
 	}
 
     /// <summary>
